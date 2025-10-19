@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Analisis Kehadiran Guru Bulanan</title>
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --accent1:#06b6d4;
+      --accent2:#7c3aed;
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui;background:linear-gradient(180deg,var(--bg1),#021226);color:#e6eef8;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .float-shape{position:absolute;filter:blur(36px);opacity:0.45;mix-blend-mode:screen;pointer-events:none}
+    .shape-a{width:420px;height:420px;background:linear-gradient(45deg,var(--accent1),var(--accent2));left:-80px;top:-80px;border-radius:48%;animation:floatA 9s ease-in-out infinite}
+    .shape-b{width:300px;height:300px;background:linear-gradient(135deg,var(--accent2),#fb7185);right:-60px;bottom:-60px;border-radius:40%;animation:floatB 12s ease-in-out infinite}
+    @keyframes floatA{0%{transform:translateY(0)}50%{transform:translateY(-28px) rotate(6deg)}100%{transform:translateY(0) rotate(0deg)}}
+    @keyframes floatB{0%{transform:translateY(0)}50%{transform:translateY(36px) rotate(-6deg)}100%{transform:translateY(0) rotate(0deg)}}
+    .wrapper{position:relative;backdrop-filter:blur(8px) saturate(120%);background:var(--glass);border-radius:18px;padding:40px;box-shadow:0 10px 30px rgba(2,6,23,0.6);text-align:center;z-index:1}
+    h1{font-size:clamp(24px,4vw,40px);margin-bottom:30px;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .btn{display:block;width:100%;max-width:340px;margin:10px auto;padding:16px 20px;font-size:16px;font-weight:600;color:#e6eef8;background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;border-radius:12px;cursor:pointer;transition:transform .2s, box-shadow .2s;text-decoration:none}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.3)}
+    .btn:active{transform:translateY(0)}
+    .ripple{position:absolute;border-radius:50%;transform:scale(0);background:rgba(255,255,255,0.3);pointer-events:none;animation:ripple .6s linear}
+    @keyframes ripple{to{transform:scale(4);opacity:0}}
+  </style>
+</head>
+<body>
+  <div class="float-shape shape-a"></div>
+  <div class="float-shape shape-b"></div>
+  <div class="wrapper">
+    <h1>Analisis Kehadiran Guru Bulanan</h1>
+    <a href="https://borangkehadiran.github.io/AutoCount/" class="btn">Jumlah Hari Yang Guru Hadir</a>
+    <a href="https://www.google.com/" class="btn">Waktu Hadir dan Waktu Keluar Harian Guru</a>
+  </div>
+</body>
+</html>
